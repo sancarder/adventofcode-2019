@@ -3,3 +3,9 @@
 ### Advent of Code ###
 # Input data file 
 input.txt
+
+# Vs Code
+.vscode/
+
+# Test scripts 
+test.py
