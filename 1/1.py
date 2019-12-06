@@ -2,8 +2,13 @@ input = open('input.txt', 'r')
 
 sums = 0
 
-for line in input:
+for mass in input:
     
-    sums += int(line)//3 -2
+    fuel = int(mass)
+    
+    while fuel >0:
+        fuel = int(fuel)//3 -2
+        if fuel > 0:
+            sums += fuel
     
 print(sums)
