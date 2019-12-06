@@ -4,7 +4,6 @@ sums = 0
 
 for line in input:
     
-    linesum = round(int(line)/3) -2
-    sums += linesum
+    sums += int(line)//3 -2
     
 print(sums)
