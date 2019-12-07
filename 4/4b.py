@@ -20,10 +20,17 @@ def check_increase(password):
 def check_double_digits(password):
     numbers = list(password)
     status = False
-    for n in range(0,len(numbers)-1):
+    #lastGroupPos = 0
+    #Treat first character as special case
+    if numbers[0]==numbers[1]:
+        status = True
+    
+    for n in range(1,len(numbers)-1):
         if (numbers[n] == numbers[n+1]):
-            status = True
-            break
+            if numbers[n-1] != numbers[n]:
+                status = True
+            else:
+                status = False
 
     return status
 
@@ -62,7 +69,7 @@ def run_test():
         
     print(numbers_of_passwords)
 
-#run_test()
-run_all()
+run_test()
+#run_all()
 
     
