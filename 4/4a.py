@@ -28,9 +28,12 @@ def check_double_digits(password):
     return status
 
 def run_all():
+    input = open('input.txt', 'r')
+    ranges = input.readline()
+    start, stop = ranges.split('-')
 
     numbers_of_passwords = 0
-    for i in range(273025, 767253):
+    for i in range(int(start), int(stop)):
         password = str(i)
         length = check_length(password)
         increase = check_increase(password)

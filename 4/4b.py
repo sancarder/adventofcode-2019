@@ -20,24 +20,36 @@ def check_increase(password):
 def check_double_digits(password):
     numbers = list(password)
     status = False
-    #lastGroupPos = 0
+    count = 0
+    lastGroup = -1
     #Treat first character as special case
     if numbers[0]==numbers[1]:
         status = True
+        group = True
+        count +=1
+        lastGroup = numbers[0]
     
     for n in range(1,len(numbers)-1):
         if (numbers[n] == numbers[n+1]):
-            if numbers[n-1] != numbers[n]:
+            #if numbers[n-1] != numbers[n]:
+            if lastGroup != numbers[n]:
                 status = True
+                lastGroup = numbers[n]
             else:
-                status = False
-
-    return status
+                status = False    
+        else:
+            if status == True:
+                break
+    return status             
+    
 
 def run_all():
+    input = open('input.txt', 'r')
+    ranges = input.readline()
+    start, stop = ranges.split('-')
 
     numbers_of_passwords = 0
-    for i in range(273025, 767253):
+    for i in range(int(start), int(stop)):
         password = str(i)
         length = check_length(password)
         increase = check_increase(password)
@@ -53,7 +65,7 @@ def run_test():
 
     numbers_of_passwords = 0
 
-    for i in [111111, 223450, 123789, 112233, 123444, 111122]:
+    for i in [111111, 223450, 123789, 112233, 123444, 111122, 277788, 366777]:
         password = str(i)
         print(password)
         length = check_length(password)
@@ -69,7 +81,7 @@ def run_test():
         
     print(numbers_of_passwords)
 
-run_test()
-#run_all()
+#run_test()
+run_all()
 
     
