@@ -191,8 +191,8 @@ for phaseList in list(perm):
             print(op)
             print ('amp: ', amp, inputValue, ampMap[amp][PHASE])
             op, intCodes, opPos, inputValue = run_program(ampMap[amp][INTCODES][ampMap[amp][OPPOS]], ampMap[amp][INTCODES], ampMap[amp][OPPOS], inputValue, ampMap[amp][PHASE], firstRun)
-            if op  == 99:
-                break
+            #if op  == 99:
+                #break
             #print (op, opPos)
             ampMap[amp] = [op, intCodes, opPos, inputValue]
         firstRun = False
