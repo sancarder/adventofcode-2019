@@ -1,7 +1,7 @@
 import itertools
 
 def read_input():
-    input = open('testinput2.txt', 'r')
+    input = open('input.txt', 'r')
     intCode = input.readline().strip()
     intCodes = intCode.split(',')
     intCodes = list(map(int, intCodes))
